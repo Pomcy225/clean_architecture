@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Todo } from '../../domain/entities/todo.entity';
+import { Todo } from '../entities/todo.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TodoEntity } from '../database/entities/todo.entity';
-import { TodoRepository } from 'src/domain/repositories/todoRepository.interface';
+import { TodoEntity } from '../../infrastructure/database/entities/todo.entity';
+import { TodoRepository } from 'src/application/repositories/todoRepository.interface';
 
 @Injectable()
 export class TypeOrmTodoRepository implements TodoRepository {

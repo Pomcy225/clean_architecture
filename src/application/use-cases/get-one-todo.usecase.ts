@@ -1,10 +1,10 @@
 import { TodoRepository } from 'src/application/repositories/todoRepository.interface';
 import { Todo } from '../../domain/entities/todo.entity';
 
-export class GetTodosUseCase {
+export class GetTodoByIdUseCase {
   constructor(private readonly todoRepository: TodoRepository) {}
 
-  async execute(): Promise<Todo[]> {
-    return this.todoRepository.findAll();
+  async execute(id: string): Promise<Todo> {
+    return this.todoRepository.findById(id);
   }
 }
